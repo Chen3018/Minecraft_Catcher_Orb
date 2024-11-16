@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "dgd",
+    "glg",
+    "dgd"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    },
+    "l": {
+      "item": "minecraft:lead"
+    }
+  },
+  "result": {
+    "id": "catcherorbmod:orb",
+    "count": 1
+  }
+}
