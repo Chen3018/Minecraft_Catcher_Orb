@@ -1,8 +1,11 @@
 package net.chenjiaf.catcherorbmod;
 
 import com.mojang.logging.LogUtils;
+import net.chenjiaf.catcherorbmod.entity.ModEntities;
 import net.chenjiaf.catcherorbmod.item.ModCreativeModTabs;
 import net.chenjiaf.catcherorbmod.item.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -34,6 +37,8 @@ public class CatcherOrbMod
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -74,6 +79,7 @@ public class CatcherOrbMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register(ModEntities.ORB.get(), ThrownItemRenderer::new);
         }
     }
 }

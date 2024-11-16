@@ -1,6 +1,7 @@
 package net.chenjiaf.catcherorbmod.item;
 
 import net.chenjiaf.catcherorbmod.CatcherOrbMod;
+import net.chenjiaf.catcherorbmod.item.custom.OrbItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,7 +13,7 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, CatcherOrbMod.MODID);
 
     public static final RegistryObject<Item> ORB = ITEMS.register("orb",
-            () -> new Item(new Item.Properties()));
+            () -> new OrbItem(new Item.Properties()));
     public static final RegistryObject<Item> CREATIVE_ORB = ITEMS.register("creative_orb",
             () -> new Item(new Item.Properties()));
 
