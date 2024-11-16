@@ -1,6 +1,9 @@
 package net.chenjiaf.catcherorbmod;
 
 import com.mojang.logging.LogUtils;
+import net.chenjiaf.catcherorbmod.item.ModCreativeModTabs;
+import net.chenjiaf.catcherorbmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -28,6 +31,10 @@ public class CatcherOrbMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -48,6 +55,10 @@ public class CatcherOrbMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.ORB);
+            event.accept(ModItems.CREATIVE_ORB);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
