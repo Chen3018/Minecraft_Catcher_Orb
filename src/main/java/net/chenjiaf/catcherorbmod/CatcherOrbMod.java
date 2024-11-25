@@ -1,6 +1,7 @@
 package net.chenjiaf.catcherorbmod;
 
 import com.mojang.logging.LogUtils;
+import net.chenjiaf.catcherorbmod.component.ModDataComponentTypes;
 import net.chenjiaf.catcherorbmod.entity.ModEntities;
 import net.chenjiaf.catcherorbmod.item.ModCreativeModTabs;
 import net.chenjiaf.catcherorbmod.item.ModItems;
@@ -39,6 +40,8 @@ public class CatcherOrbMod
         ModItems.register(modEventBus);
 
         ModEntities.register(modEventBus);
+
+        ModDataComponentTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
