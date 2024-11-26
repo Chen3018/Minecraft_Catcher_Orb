@@ -1,6 +1,7 @@
 package net.chenjiaf.catcherorbmod.item;
 
 import net.chenjiaf.catcherorbmod.CatcherOrbMod;
+import net.chenjiaf.catcherorbmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -19,6 +20,7 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.ORB.get());
                         pOutput.accept(ModItems.CREATIVE_ORB.get());
+                        pOutput.accept(ModBlocks.MOD_PORTAL.get());
                     })
                     .build());
 
