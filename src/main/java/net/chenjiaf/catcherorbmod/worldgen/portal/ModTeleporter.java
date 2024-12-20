@@ -31,6 +31,7 @@ public class ModTeleporter implements ITeleporter {
         }
 
         BlockPos destinationPos = new BlockPos(thisPos.getX(), y, thisPos.getZ());
+        System.out.println("Destination Pos: " + destinationPos);
 
         int tries = 0;
         while ((destinationWorld.getBlockState(destinationPos).getBlock() != Blocks.AIR) &&
@@ -42,6 +43,7 @@ public class ModTeleporter implements ITeleporter {
         }
 
         entity.setPos(destinationPos.getX(), destinationPos.getY(), destinationPos.getZ());
+        entity.teleportTo(destinationPos.getX(), destinationPos.getY(), destinationPos.getZ());
 
         if (insideDimension) {
             boolean doSetBlock = true;
